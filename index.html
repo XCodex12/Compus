@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compus Training Academy - Telecommunication Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white;
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #0066b2, #4da8ff);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease;
+            box-shadow: 0 2px 20px rgba(0,102,178,0.3);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .logo-text span {
+            color: #000000;
+            background: white;
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0,102,178,0.1), rgba(77,168,255,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, #0066b2 0%, #4da8ff 25%, #0066b2 50%, #4da8ff 75%, #0066b2 100%);
+            animation: wave 20s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1.5s ease;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #0066b2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0066b2, #4da8ff);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,102,178,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,102,178,0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0066b2;
+            border: 2px solid #0066b2;
+        }
+
+        .btn-secondary:hover {
+            background: #0066b2;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 5%;
+            background: white;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: #0066b2;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,102,178,0.1);
+            transition: all 0.3s;
+            animation: slideInLeft 1s ease;
+            border: 1px solid rgba(0,102,178,0.1);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,102,178,0.2);
+        }
+
+        .about-card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #0066b2;
+        }
+
+        .about-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-card i {
+            font-size: 3rem;
+            color: #0066b2;
+            margin-bottom: 20px;
+        }
+
+        .address {
+            background: linear-gradient(135deg, #0066b2, #4da8ff);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .address h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            animation: scaleIn 1s ease;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0066b2;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 100px 5%;
+            background: white;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,102,178,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,102,178,0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, transparent, rgba(77,168,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+        }
+
+        .program-card:hover::before {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,102,178,0.2);
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            color: #0066b2;
+            margin-bottom: 20px;
+        }
+
+        .program-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #0066b2;
+        }
+
+        .program-card p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .program-card .duration {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #0066b2, #4da8ff);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* NQF Section */
+        .nqf-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #0066b2, #4da8ff);
+            color: white;
+            text-align: center;
+        }
+
+        .nqf-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nqf-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .nqf-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .nqf-badge {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #0066b2;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-toggle {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #0066b2, #4da8ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,102,178,0.4);
+            transition: all 0.3s;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-toggle i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .chatbot-panel {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            width: 350px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+            overflow: hidden;
+            border: 2px solid #0066b2;
+        }
+
+        .chatbot-panel.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #0066b2, #4da8ff);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chatbot-header i {
+            font-size: 2rem;
+        }
+
+        .chatbot-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .chatbot-messages {
+            height: 350px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            animation: messageSlide 0.3s ease;
+            word-wrap: break-word;
+        }
+
+        @keyframes messageSlide {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .bot-message {
+            background: #e3f2fd;
+            color: #0066b2;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background: #0066b2;
+            color: white;
+            margin-left: auto;
+        }
+
+        .message a {
+            color: #0066b2;
+            text-decoration: underline;
+            font-weight: bold;
+            word-break: break-all;
+        }
+
+        .user-message a {
+            color: white;
+        }
+
+        .admin-message {
+            background: #fff3cd;
+            color: #856404;
+            border-left: 4px solid #ffc107;
+            font-weight: 500;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #ddd;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .chatbot-input input:focus {
+            border-color: #0066b2;
+        }
+
+        .chatbot-input button {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #0066b2, #4da8ff);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .chatbot-input button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0066b2;
+            color: white;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: white;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .footer-section i {
+            margin-right: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Animations */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .chatbot-panel {
+                width: 300px;
+                right: -20px;
+            }
+        }
+
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-circle">
+                    <i class="fas fa-graduation-cap" style="color: #0066b2; font-size: 1.5rem;"></i>
+                </div>
+                <div class="logo-text">Compus <span>Training</span></div>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#programs">Programs</a>
+                <a href="#nqf">NQF5+</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="floating">Compus Training Academy</h1>
+            <p>Empowering Future Telecommunication Leaders in Durban</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('about')">Learn More</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('programs')">Our Programs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title scroll-reveal">About Us</h2>
+        <div class="about-container">
+            <div class="about-card scroll-reveal">
+                <i class="fas fa-building"></i>
+                <h2>Our Academy</h2>
+                <p>Located in the heart of Durban at West Street Walk Room 214, Compus Training Academy is dedicated to shaping the future of telecommunications. Our intensive 4-month program combines theoretical knowledge with practical skills, preparing students for successful careers in the telecom industry.</p>
+                <div class="address">
+                    <h3><i class="fas fa-map-marker-alt"></i> Visit Us:</h3>
+                    <p>West Street Walk, Room 214<br>Durban, South Africa</p>
+                </div>
+            </div>
+            <div class="about-card scroll-reveal">
+                <i class="fas fa-handshake"></i>
+                <h2>Our Mission</h2>
+                <p>We don't just teach - we build careers. After the 4-month training, we secure 8-month internships for our students, giving them real-world experience that transforms them into industry-ready professionals. We also help qualified individuals with NQF5+ qualifications find meaningful internships.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-item scroll-reveal">
+            <div class="stat-number" data-target="500">0</div>
+            <div class="stat-label">Students Trained</div>
+        </div>
+        <div class="stat-item scroll-reveal">
+            <div class="stat-number" data-target="98">0</div>
+            <div class="stat-label">Employment Rate</div>
+        </div>
+        <div class="stat-item scroll-reveal">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Partner Companies</div>
+        </div>
+        <div class="stat-item scroll-reveal">
+            <div class="stat-number" data-target="4">0</div>
+            <div class="stat-label">Years Excellence</div>
+        </div>
+    </div>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <h2 class="section-title scroll-reveal">Our Programs</h2>
+        <div class="programs-grid">
+            <div class="program-card scroll-reveal">
+                <div class="program-icon">
+                    <i class="fas fa-wifi"></i>
+                </div>
+                <h3>Telecommunication Fundamentals</h3>
+                <p>4-month intensive training covering network infrastructure, wireless communications, and modern telecom systems.</p>
+                <span class="duration">4 Months Training</span>
+            </div>
+            <div class="program-card scroll-reveal">
+                <div class="program-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Internship Program</h3>
+                <p>8-month paid internship with top telecom companies. Real-world experience with industry mentors.</p>
+                <span class="duration">8 Months Internship</span>
+            </div>
+            <div class="program-card scroll-reveal">
+                <div class="program-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>NQF5+ Placement</h3>
+                <p>For qualified individuals with NQF5 or higher, we provide internship placement services with our partner companies.</p>
+                <span class="duration">Career Support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- NQF Section -->
+    <section id="nqf" class="nqf-section">
+        <div class="nqf-content scroll-reveal">
+            <h2>For NQF5+ Qualified Individuals</h2>
+            <p>Have a qualification at NQF level 5 or higher? Let us help you find the perfect internship opportunity!</p>
+            <div class="nqf-badge">NQF5+ Career Support Available</div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" onclick="toggleChatbot()">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-panel" id="chatbotPanel">
+            <div class="chatbot-header">
+                <i class="fas fa-robot"></i>
+                <h3>Compus Chatbot</h3>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">Hey! How are you doing today?</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-section scroll-reveal">
+                <h3>Compus Training</h3>
+                <p><i class="fas fa-map-marker-alt"></i> West Street Walk, Room 214, Durban</p>
+                <p><i class="fas fa-phone"></i> +27 (0) 31 123 4567</p>
+                <p><i class="fas fa-envelope"></i> info@compustraining.co.za</p>
+            </div>
+            <div class="footer-section scroll-reveal">
+                <h3>Quick Links</h3>
+                <p><a href="#home" style="color: white; text-decoration: none;">Home</a></p>
+                <p><a href="#about" style="color: white; text-decoration: none;">About Us</a></p>
+                <p><a href="#programs" style="color: white; text-decoration: none;">Our Programs</a></p>
+                <p><a href="#nqf" style="color: white; text-decoration: none;">NQF5+</a></p>
+            </div>
+            <div class="footer-section scroll-reveal">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom scroll-reveal">
+            <p>&copy; 2024 Compus Training Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script>
+        // Chatbot functionality
+        let chatbotState = 'greeting';
+        let isAdminMode = false;
+        let adminAttempts = 0;
+        const adminPassword = "Admin2010*";
+        
+        const formLink = "https://docs.google.com/forms/d/e/1FAIpQLScLIpS8BHqnJ75K0E0yVnU5qExnCTkpsaHwrZmZNyDQwbVPMQ/viewform";
+        const adminResponsesLink = "https://docs.google.com/forms/d/1J0tvTneVfbmDL-HK39ZaY5FvDUERDJXh7raOjBv1qQU/edit#responses";
+        const adminSpreadsheetLink = "https://docs.google.com/spreadsheets/d/1wKoiGcSr1ggep2saKAKv1YqcTgsQwFnojnubHh2vRG4/edit?resourcekey=&gid=1209626003#gid=1209626003";
+
+        function toggleChatbot() {
+            const panel = document.getElementById('chatbotPanel');
+            panel.classList.toggle('active');
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            
+            if (message === '') return;
+
+            // Add user message to chat
+            addMessage(message, 'user');
+            input.value = '';
+
+            // Process response
+            setTimeout(() => {
+                processChatbotResponse(message);
+            }, 500);
+        }
+
+        function addMessage(text, sender, isAdmin = false) {
+            const messages = document.getElementById('chatbotMessages');
+            const messageDiv = document.createElement('div');
+            
+            if (isAdmin) {
+                messageDiv.classList.add('message', 'admin-message');
+            } else {
+                messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+            }
+            
+            // Check if text contains links and make them clickable
+            if (text.includes('http://') || text.includes('https://')) {
+                const linkRegex = /(https?:\/\/[^\s]+)/g;
+                text = text.replace(linkRegex, '<a href="$1" target="_blank" style="color: ' + 
+                    (isAdmin ? '#856404' : (sender === 'user' ? 'white' : '#0066b2')) + 
+                    '; text-decoration: underline; word-break: break-all;">$1</a>');
+                messageDiv.innerHTML = text;
+            } else {
+                messageDiv.textContent = text;
+            }
+            
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function processChatbotResponse(userMessage) {
+            // Store original message for admin password check (without any modification)
+            const originalMessage = userMessage;
+            // For normal conversation flow, we use lowercase
+            const lowerCaseMessage = userMessage.toLowerCase();
+            
+            // Admin mode handling - Check if we're in password entry state
+            if (chatbotState === 'admin_password') {
+                // Compare the original message directly with the password (case sensitive)
+                if (originalMessage === adminPassword) {
+                    addMessage("✅ Welcome Admin! Here are your admin links:", 'bot', true);
+                    
+                    // Send links one by one for better clickability
+                    addMessage(`📈 Responses Spreadsheet Link:\n${adminSpreadsheetLink}`, 'bot', true);
+                    
+                    addMessage("You can now continue with normal chat or close this panel.", 'bot', true);
+                    chatbotState = 'greeting';
+                    isAdminMode = true;
+                    adminAttempts = 0; // Reset attempts on success
+                } else {
+                    adminAttempts++;
+                    if (adminAttempts >= 3) {
+                        addMessage("🔒 Too many failed attempts. Returning to normal mode.", 'bot', true);
+                        chatbotState = 'greeting';
+                        adminAttempts = 0;
+                    } else {
+                        addMessage(`❌ Incorrect password! Please check and retype the admin password. (Attempt ${adminAttempts}/3)`, 'bot', true);
+                    }
+                }
+                return;
+            }
+            
+            // Check for admin access attempt - only at greeting state and exact match "Admin" (case insensitive)
+            if (chatbotState === 'greeting' && lowerCaseMessage === 'admin') {
+                addMessage("🔐 Admin access detected. Please enter the admin password:", 'bot', true);
+                chatbotState = 'admin_password';
+                return;
+            }
+            
+            // Normal chatbot flow (using lowercase for pattern matching)
+            
+            // Greeting responses
+            const greetingPatterns = [
+                'hi', 'hello', 'hey', 'howdy', 'good morning', 'good afternoon', 
+                'good evening', 'what\'s up', 'sup', 'yo', 'greetings'
+            ];
+            
+            // How are you responses
+            const howAreYouPatterns = [
+                'how are you', 'how do you do', 'how\'s it going', 'how are things',
+                'you good', 'you alright', 'how are you doing'
+            ];
+            
+            // Positive responses about doing well
+            const doingWellPatterns = [
+                'i\'m good', 'i am good', 'i\'m fine', 'i am fine', 'doing well',
+                'doing great', 'i\'m great', 'i am great', 'not bad', 'all good',
+                'feeling good', 'pretty good', 'doing good', 'i\'m doing well'
+            ];
+
+            if (chatbotState === 'greeting') {
+                // Check if user is greeting
+                if (greetingPatterns.some(pattern => lowerCaseMessage.includes(pattern))) {
+                    addMessage("Hey! How are you doing today?", 'bot');
+                    chatbotState = 'asked_how_are_you';
+                }
+                // Check if user is asking how the bot is
+                else if (howAreYouPatterns.some(pattern => lowerCaseMessage.includes(pattern))) {
+                    addMessage("I'm doing great, thanks for asking! How are you doing today?", 'bot');
+                    chatbotState = 'asked_how_are_you';
+                }
+                // Check if user is saying how they are
+                else if (doingWellPatterns.some(pattern => lowerCaseMessage.includes(pattern))) {
+                    addMessage("That's good to hear! Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                    chatbotState = 'asked_experience';
+                }
+                // Handle any other response naturally
+                else {
+                    addMessage("Thanks for reaching out! I'm here to help. Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                    chatbotState = 'asked_experience';
+                }
+            } 
+            else if (chatbotState === 'asked_how_are_you') {
+                // Check if user responded about how they are
+                if (doingWellPatterns.some(pattern => lowerCaseMessage.includes(pattern)) || 
+                    lowerCaseMessage.includes('good') || lowerCaseMessage.includes('fine') || 
+                    lowerCaseMessage.includes('great') || lowerCaseMessage.includes('well')) {
+                    addMessage("That's great to hear! Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                } 
+                else if (lowerCaseMessage.includes('bad') || lowerCaseMessage.includes('not good') || lowerCaseMessage.includes('terrible')) {
+                    addMessage("I'm sorry to hear that. I hope your day gets better! Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                }
+                else {
+                    addMessage("I see. Well, I'm here to help! Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                }
+                chatbotState = 'asked_experience';
+            }
+            else if (chatbotState === 'asked_experience') {
+                // Check for positive responses (Yes)
+                if (lowerCaseMessage.includes('yes') || lowerCaseMessage.includes('yep') || lowerCaseMessage.includes('yeah') || 
+                    lowerCaseMessage.includes('sure') || lowerCaseMessage.includes('definitely') || lowerCaseMessage.includes('i have') ||
+                    lowerCaseMessage.includes('studied') || lowerCaseMessage.includes('benefited') || lowerCaseMessage.includes('attended')) {
+                    
+                    const linkMessage = `Great! Please fill out our questionnaire form: ${formLink}`;
+                    addMessage(linkMessage, 'bot');
+                    chatbotState = 'greeting';
+                } 
+                // Check for negative responses (No)
+                else if (lowerCaseMessage.includes('no') || lowerCaseMessage.includes('nope') || lowerCaseMessage.includes('not yet') || 
+                         lowerCaseMessage.includes('never') || lowerCaseMessage.includes('haven\'t') || lowerCaseMessage.includes('not really')) {
+                    addMessage("Would you like to know about our academy and what we offer? We're located in Durban at West Street Walk Room 214, and we provide 4-month telecommunication training with 8-month guaranteed internships!", 'bot');
+                    chatbotState = 'asked_about_academy';
+                }
+                // Check if they want to know more without explicitly saying no
+                else if (lowerCaseMessage.includes('tell me') || lowerCaseMessage.includes('what do you offer') || 
+                         lowerCaseMessage.includes('about') || lowerCaseMessage.includes('information')) {
+                    addMessage("I'd be happy to tell you! Compus Training Academy is located in Durban at West Street Walk Room 214. We offer a 4-month telecommunication training program followed by an 8-month guaranteed internship. We also help qualified individuals with NQF5+ find internships. Would you like to know more?", 'bot');
+                    chatbotState = 'asked_about_academy';
+                }
+                // Handle ambiguous responses
+                else {
+                    addMessage("I'm not sure I understood. Could you please tell me if you've studied with us before? Just say 'yes' or 'no'.", 'bot');
+                }
+            }
+            else if (chatbotState === 'asked_about_academy') {
+                if (lowerCaseMessage.includes('yes') || lowerCaseMessage.includes('yep') || lowerCaseMessage.includes('yeah') || 
+                    lowerCaseMessage.includes('sure') || lowerCaseMessage.includes('tell me more') || lowerCaseMessage.includes('interested')) {
+                    addMessage("Great! Compus Training Academy specializes in telecommunication education. Our 4-month program covers network infrastructure, wireless communications, and modern telecom systems. After training, we secure 8-month paid internships with top telecom companies. We're based in Durban at West Street Walk Room 214. We also help NQF5+ qualified individuals find internship opportunities. Is there anything specific you'd like to know?", 'bot');
+                    chatbotState = 'providing_info';
+                } else if (lowerCaseMessage.includes('no') || lowerCaseMessage.includes('nope') || lowerCaseMessage.includes('not now')) {
+                    addMessage("No problem! Feel free to reach out anytime if you have questions. Have a great day!", 'bot');
+                    chatbotState = 'greeting';
+                } else {
+                    addMessage("You can always visit our website sections above for more detailed information, or ask me anything specific about our programs. Is there something particular you're interested in?", 'bot');
+                }
+            }
+            else if (chatbotState === 'providing_info') {
+                // Handle follow-up questions in information mode
+                if (lowerCaseMessage.includes('duration') || lowerCaseMessage.includes('how long')) {
+                    addMessage("Our program is 4 months of training followed by 8 months of paid internship. So 12 months total to complete the full program!", 'bot');
+                } else if (lowerCaseMessage.includes('cost') || lowerCaseMessage.includes('fee') || lowerCaseMessage.includes('price') || lowerCaseMessage.includes('payment')) {
+                    addMessage("For specific information about course fees and payment options, please contact our admissions office directly. They'll be happy to help!", 'bot');
+                } else if (lowerCaseMessage.includes('apply') || lowerCaseMessage.includes('application') || lowerCaseMessage.includes('enroll')) {
+                    addMessage("To apply, you can visit us at West Street Walk Room 214 in Durban, or contact us through the information in our footer. We'd love to have you join us!", 'bot');
+                } else if (lowerCaseMessage.includes('nqf') || lowerCaseMessage.includes('qualification')) {
+                    addMessage("If you have an NQF5+ qualification, we can help you find internships with our partner companies. Just reach out to us with your qualifications!", 'bot');
+                } else if (lowerCaseMessage.includes('thank')) {
+                    addMessage("You're welcome! Is there anything else I can help you with?", 'bot');
+                } else if (lowerCaseMessage.includes('bye') || lowerCaseMessage.includes('goodbye')) {
+                    addMessage("Goodbye! Feel free to come back if you have more questions. Have a wonderful day!", 'bot');
+                    chatbotState = 'greeting';
+                } else {
+                    addMessage("I'm here to help! You can ask me about our programs, location, duration, NQF5+ support, or anything else about Compus Training Academy.", 'bot');
+                }
+            }
+        }
+
+        // Scroll animations
+        function checkScroll() {
+            const elements = document.querySelectorAll('.scroll-reveal');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                    element.classList.add('revealed');
+                }
+            });
+        }
+
+        // Smooth scroll to sections
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Animated counter for stats
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                const current = parseInt(stat.innerText);
+                
+                if (current < target) {
+                    const increment = Math.ceil(target / 50);
+                    const newValue = Math.min(current + increment, target);
+                    stat.innerText = newValue;
+                    
+                    if (newValue < target) {
+                        setTimeout(animateStats, 30);
+                    }
+                }
+            });
+        }
+
+        // Initialize animations when stats come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                }
+            });
+        });
+
+        document.querySelectorAll('.stats').forEach(stats => {
+            observer.observe(stats);
+        });
+
+        // Event listeners
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // Initialize chatbot with greeting
+        window.onload = function() {
+            checkScroll();
+            chatbotState = 'greeting';
+            isAdminMode = false;
+            adminAttempts = 0;
+        };
+    </script>
+</body>
+</html>
