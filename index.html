@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compus Training Academy - Telecommunication Excellence</title>
+    <title>Compus Training Institution - Telecommunication Excellence</title>
     <style>
         * {
             margin: 0;
@@ -787,7 +787,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="floating">Compus Training Academy</h1>
+            <h1 class="floating">Compus Training Institution</h1>
             <p>Empowering Future Telecommunication Leaders in Durban</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary" onclick="scrollToSection('about')">Learn More</button>
@@ -802,8 +802,8 @@
         <div class="about-container">
             <div class="about-card scroll-reveal">
                 <i class="fas fa-building"></i>
-                <h2>Our Academy</h2>
-                <p>Located in the heart of Durban at West Street Walk Room 214, Compus Training Academy is dedicated to shaping the future of telecommunications. Our intensive 4-month program combines theoretical knowledge with practical skills, preparing students for successful careers in the telecom industry.</p>
+                <h2>Our Institution</h2>
+                <p>Located in the heart of Durban at West Street Walk Room 214, Compus Training Institution is dedicated to shaping the future of telecommunications. Our intensive 4-month program combines theoretical knowledge with practical skills, preparing students for successful careers in the telecom industry.</p>
                 <div class="address">
                     <h3><i class="fas fa-map-marker-alt"></i> Visit Us:</h3>
                     <p>West Street Walk, Room 214<br>Durban, South Africa</p>
@@ -924,7 +924,7 @@
             </div>
         </div>
         <div class="footer-bottom scroll-reveal">
-            <p>&copy; 2024 Compus Training Academy. All rights reserved.</p>
+            <p>&copy; 2024 Compus Training Institution. All rights reserved.</p>
         </div>
     </footer>
 
@@ -938,9 +938,9 @@
         let adminAttempts = 0;
         const adminPassword = "Admin2010*";
         
-        const formLink = "https://docs.google.com/forms/d/e/1FAIpQLScLIpS8BHqnJ75K0E0yVnU5qExnCTkpsaHwrZmZNyDQwbVPMQ/viewform";
-        const adminResponsesLink = "https://docs.google.com/forms/d/1J0tvTneVfbmDL-HK39ZaY5FvDUERDJXh7raOjBv1qQU/edit#responses";
-        const adminSpreadsheetLink = "https://docs.google.com/spreadsheets/d/1wKoiGcSr1ggep2saKAKv1YqcTgsQwFnojnubHh2vRG4/edit?resourcekey=&gid=1209626003#gid=1209626003";
+        // Updated links
+        const formLink = "https://docs.google.com/forms/d/e/1FAIpQLSetxyIc7C00vfWvCOYpjUEk-I6HES02s3MTqCMXoe_sgMh01w/viewform?usp=sharing&ouid=111951970896282427502";
+        const adminSpreadsheetLink = "https://docs.google.com/spreadsheets/d/1Tb5Oq70Ft6TJ2yggALsIPFyIumgKT5Tp_e2EduXXi5k/edit?resourcekey=&gid=1275402071#gid=1275402071";
 
         function toggleChatbot() {
             const panel = document.getElementById('chatbotPanel');
@@ -1004,10 +1004,10 @@
             if (chatbotState === 'admin_password') {
                 // Compare the original message directly with the password (case sensitive)
                 if (originalMessage === adminPassword) {
-                    addMessage("✅ Welcome Admin! Here are your admin links:", 'bot', true);
+                    addMessage("✅ Welcome Admin! Here's your spreadsheet link:", 'bot', true);
                     
-                    // Send links one by one for better clickability
-                    addMessage(`📈 Responses Spreadsheet Link:\n${adminSpreadsheetLink}`, 'bot', true);
+                    // Send the spreadsheet link for admin
+                    addMessage(`📊 Responses Spreadsheet:\n${adminSpreadsheetLink}`, 'bot', true);
                     
                     addMessage("You can now continue with normal chat or close this panel.", 'bot', true);
                     chatbotState = 'greeting';
@@ -1067,12 +1067,12 @@
                 }
                 // Check if user is saying how they are
                 else if (doingWellPatterns.some(pattern => lowerCaseMessage.includes(pattern))) {
-                    addMessage("That's good to hear! Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                    addMessage("That's good to hear! Have you ever studied or benefited from Compus Training Institution before?", 'bot');
                     chatbotState = 'asked_experience';
                 }
                 // Handle any other response naturally
                 else {
-                    addMessage("Thanks for reaching out! I'm here to help. Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                    addMessage("Thanks for reaching out! I'm here to help. Have you ever studied or benefited from Compus Training Institution before?", 'bot');
                     chatbotState = 'asked_experience';
                 }
             } 
@@ -1081,13 +1081,13 @@
                 if (doingWellPatterns.some(pattern => lowerCaseMessage.includes(pattern)) || 
                     lowerCaseMessage.includes('good') || lowerCaseMessage.includes('fine') || 
                     lowerCaseMessage.includes('great') || lowerCaseMessage.includes('well')) {
-                    addMessage("That's great to hear! Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                    addMessage("That's great to hear! Have you ever studied or benefited from Compus Training Institution before?", 'bot');
                 } 
                 else if (lowerCaseMessage.includes('bad') || lowerCaseMessage.includes('not good') || lowerCaseMessage.includes('terrible')) {
-                    addMessage("I'm sorry to hear that. I hope your day gets better! Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                    addMessage("I'm sorry to hear that. I hope your day gets better! Have you ever studied or benefited from Compus Training Institution before?", 'bot');
                 }
                 else {
-                    addMessage("I see. Well, I'm here to help! Have you ever studied or benefited from Compus Training Academy before?", 'bot');
+                    addMessage("I see. Well, I'm here to help! Have you ever studied or benefited from Compus Training Institution before?", 'bot');
                 }
                 chatbotState = 'asked_experience';
             }
@@ -1104,13 +1104,13 @@
                 // Check for negative responses (No)
                 else if (lowerCaseMessage.includes('no') || lowerCaseMessage.includes('nope') || lowerCaseMessage.includes('not yet') || 
                          lowerCaseMessage.includes('never') || lowerCaseMessage.includes('haven\'t') || lowerCaseMessage.includes('not really')) {
-                    addMessage("Would you like to know about our academy and what we offer? We're located in Durban at West Street Walk Room 214, and we provide 4-month telecommunication training with 8-month guaranteed internships!", 'bot');
+                    addMessage("Would you like to know about our institution and what we offer? We're located in Durban at West Street Walk Room 214, and we provide 4-month telecommunication training with 8-month guaranteed internships!", 'bot');
                     chatbotState = 'asked_about_academy';
                 }
                 // Check if they want to know more without explicitly saying no
                 else if (lowerCaseMessage.includes('tell me') || lowerCaseMessage.includes('what do you offer') || 
                          lowerCaseMessage.includes('about') || lowerCaseMessage.includes('information')) {
-                    addMessage("I'd be happy to tell you! Compus Training Academy is located in Durban at West Street Walk Room 214. We offer a 4-month telecommunication training program followed by an 8-month guaranteed internship. We also help qualified individuals with NQF5+ find internships. Would you like to know more?", 'bot');
+                    addMessage("I'd be happy to tell you! Compus Training Institution is located in Durban at West Street Walk Room 214. We offer a 4-month telecommunication training program followed by an 8-month guaranteed internship. We also help qualified individuals with NQF5+ find internships. Would you like to know more?", 'bot');
                     chatbotState = 'asked_about_academy';
                 }
                 // Handle ambiguous responses
@@ -1121,7 +1121,7 @@
             else if (chatbotState === 'asked_about_academy') {
                 if (lowerCaseMessage.includes('yes') || lowerCaseMessage.includes('yep') || lowerCaseMessage.includes('yeah') || 
                     lowerCaseMessage.includes('sure') || lowerCaseMessage.includes('tell me more') || lowerCaseMessage.includes('interested')) {
-                    addMessage("Great! Compus Training Academy specializes in telecommunication education. Our 4-month program covers network infrastructure, wireless communications, and modern telecom systems. After training, we secure 8-month paid internships with top telecom companies. We're based in Durban at West Street Walk Room 214. We also help NQF5+ qualified individuals find internship opportunities. Is there anything specific you'd like to know?", 'bot');
+                    addMessage("Great! Compus Training Institution specializes in telecommunication education. Our 4-month program covers network infrastructure, wireless communications, and modern telecom systems. After training, we secure 8-month paid internships with top telecom companies. We're based in Durban at West Street Walk Room 214. We also help NQF5+ qualified individuals find internship opportunities. Is there anything specific you'd like to know?", 'bot');
                     chatbotState = 'providing_info';
                 } else if (lowerCaseMessage.includes('no') || lowerCaseMessage.includes('nope') || lowerCaseMessage.includes('not now')) {
                     addMessage("No problem! Feel free to reach out anytime if you have questions. Have a great day!", 'bot');
@@ -1146,7 +1146,7 @@
                     addMessage("Goodbye! Feel free to come back if you have more questions. Have a wonderful day!", 'bot');
                     chatbotState = 'greeting';
                 } else {
-                    addMessage("I'm here to help! You can ask me about our programs, location, duration, NQF5+ support, or anything else about Compus Training Academy.", 'bot');
+                    addMessage("I'm here to help! You can ask me about our programs, location, duration, NQF5+ support, or anything else about Compus Training Institution.", 'bot');
                 }
             }
         }
